@@ -1,4 +1,4 @@
-package leetcode.solution.NineOneEight;
+package leetcode.solution.p918;
 
 public class Solution {
 
@@ -7,18 +7,18 @@ public class Solution {
                 maxSum = 0, minSum = 0;
 
         //获取sum和最大值
-        for (int i = 0; i < A.length; i++) {
-            sum += A[i];
-            if (maxValue <= A[i]) maxValue = A[i];
+        for (int value : A) {
+            sum += value;
+            if (maxValue <= value) maxValue = value;
         }
 
         if (maxValue > 0) {
 
-            for (int i = 0; i < A.length; i++) {
-                maxSumSoFar = (maxSumSoFar + A[i]) > A[i] ? maxSumSoFar + A[i] : A[i];
+            for (int value : A) {
+                maxSumSoFar = (maxSumSoFar + value) > value ? maxSumSoFar + value : value;
                 if (maxSumSoFar > maxSum) maxSum = maxSumSoFar;
 
-                minSumSoFar = (minSumSoFar + A[i]) < A[i] ? minSumSoFar + A[i] : A[i];
+                minSumSoFar = (minSumSoFar + value) < value ? minSumSoFar + value : value;
                 if (minSumSoFar < minSum) minSum = minSumSoFar;
             }
 
